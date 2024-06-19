@@ -1,6 +1,6 @@
 import sys
 import requests
-import yaml
+import toml
 from pathlib import Path
 from typing import List
 
@@ -36,7 +36,9 @@ def process_urls(urls_to_process: List[str], output_file_path: Path) -> None:
 
 def main(configuration_file_path: Path) -> None:
     with configuration_file_path.open('r') as config_file:
-        configuration = yaml.safe_load(config_file)
+        config_content = config_file.read()
+    
+    configuration = toml.loads(config_content)
 
     process_urls(configuration['blocklists'], Path(configuration['blocklist_output']))
     process_urls(configuration['permitted'], Path(configuration['permitted_output']))
