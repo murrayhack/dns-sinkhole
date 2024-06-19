@@ -1,2 +1,2 @@
-requests==2.31.0
-toml==0.10.2-1
+requests
+PyYAML
