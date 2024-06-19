@@ -28,6 +28,8 @@ def process_urls(urls_to_process: List[str], output_file_path: Path) -> None:
             if not line or line.startswith('#'):
                 continue
             line = line.split('#')[0].strip()
+            if line.startswith("127.0.0.1 "):
+                line = line[10:].strip()
             cleaned_urls.append(line.strip())
 
     lua_formatted_output = convert_to_lua_table(cleaned_urls)
