@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Update blocklist
+# python3 /usr/local/share/dns-sinkhole/pdns-sinkhole-generator.py /usr/local/etc/pdns-sinkhole/config.yaml
+
+# Update
+systemctl restart pdns-recursor.service
