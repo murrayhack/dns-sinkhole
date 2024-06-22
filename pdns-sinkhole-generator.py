@@ -45,7 +45,7 @@ def main(configuration_file_path: Path) -> None:
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python script.py <config_path>")
+        print("Usage: python3 pdns-sinkhole-generator.py <config_path>")
         sys.exit(1)
     
     config_path = Path(sys.argv[1])
