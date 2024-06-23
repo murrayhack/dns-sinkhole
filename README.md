@@ -4,10 +4,11 @@ This is a python language port of [Blocklister](https://github.com/thommay/block
 
 ## How to use
 1. Populate your config.toml with blocklists you want to use
-2. Run script `python pdns-sinkhole-generator.py config.toml` to create blocklist.lua and permitlist.lua
-3. Copy adblock.lua.example to your PowerDNS config folder with the name adblock.lua
-4. Update adblock.lua with correct paths to your blocklist.lua and permitlist.lua
-5. Update recursor.conf to sinkhole your DNS requests using your new lists `lua-dns-script=/etc/powerdns/adblock.lua`
+2. Run script to create blocklist.lua and permitlist.lua
+```python pdns-sinkhole-generator.py config.toml```
+3. Copy adblock.lua to your PowerDNS config folder
+4. Update your new copy of adblock.lua with correct paths to your blocklist.lua and permitlist.lua
+5. Update recursor.conf to sinkhole your DNS requests using your new lists ```lua-dns-script=/etc/powerdns/adblock.lua```
 6. Restart PowerDNS Recursor to apply configuration
 
 ## Acknowledgments
